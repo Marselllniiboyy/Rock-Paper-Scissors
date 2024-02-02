@@ -21,9 +21,33 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-const playerSelection = "SciSsorE".toLocaleLowerCase();
-const computerChoice = getComputerChoice();
+function playGame(){
+    let playerScore = 0;
+    let computerScore = 0;
 
-console.log(playRound(playerSelection,computerChoice));
-console.log(playerSelection)
-console.log(computerChoice);
+    for(let i = 1; i <=5 ; i++) {
+        const playerSelection = prompt("Please choose: Rock,Paper, or scissore").toLocaleLowerCase();
+        const computerSelection = getComputerChoice();
+        if (playRound(playerSelection,computerSelection) === "Tie Game"){
+            console.log(playRound(playerSelection,computerSelection))
+        }else if (playRound(playerSelection,computerSelection) === "You win dude!" + " " + playerSelection + " beats" +" " + computerSelection) {
+            playerScore++
+            console.log(playRound(playerSelection,computerSelection));
+        }else if(playRound(playerSelection,computerSelection) === "You Lose:( dude, " + computerSelection + " " + "beets " + playerSelection){
+            computerScore++
+            console.log(playRound(playerSelection,computerSelection))
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log(`Congrats you win, you got ${playerScore} score and computer got ${computerScore}`)
+    } else if (playerScore < computerScore){
+        console.log(`Sorry You lose, you got ${playerScore} and computer got ${computerScore}`)
+    } else{
+        console.log(`Tie Game, you got ${playerScore} and computer got ${computerScore}`)
+    }
+} 
+
+playGame()
+
+// Damm All done
