@@ -25,7 +25,7 @@ function playGame(){
     let playerScore = 0;
     let computerScore = 0;
 
-    for(let i = 1; i <=5 ; i++) {
+    
         const playerSelection = prompt("Please choose: Rock,Paper, or scissore").toLocaleLowerCase();
         const computerSelection = getComputerChoice();
         if (playRound(playerSelection,computerSelection) === "Tie Game"){
@@ -37,7 +37,7 @@ function playGame(){
             computerScore++
             console.log(playRound(playerSelection,computerSelection))
         }
-    }
+    
 
     if (playerScore > computerScore) {
         console.log(`Congrats you win, you got ${playerScore} score and computer got ${computerScore}`)
